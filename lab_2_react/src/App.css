@@ -1,42 +1,202 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* ГОЛОВНИЙ ФОН СТОРІНКИ */
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    background-color: #cbd5e1; /* Світла тема */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* ТЕМНА ТЕМА */
+.dark-mode .app-container {
+    background-color: #0f172a; 
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ШАПКА */
+.header-section {
+    padding: 40px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    background-color: #ffffff; 
+    border-bottom: 4px solid #0ea5e9; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* ТЕМНА ШАПКА */
+.dark-mode .header-section {
+    background-color: #1e293b;
 }
 
-.card {
-  padding: 2em;
+/* КОЛІР ДЛЯ ІМЕНІ */
+.header-section h1 {
+    color: #1e293b;
+    font-size: 2.5rem;
 }
 
-.read-the-docs {
-  color: #ffffff;
+.dark-mode .header-section h1 {
+    color: #f8fafc;
+}
+
+/* КОЛІР ДЛЯ СТУДЕНТА */
+.subtitle {
+    color: #0ea5e9; 
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.dark-mode .subtitle {
+    color: #38bdf8 ; 
+}
+
+/* СІТКА І КОЛОНКИ */
+.main-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    padding: 30px 20px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.full-row { grid-column: 1 / -1; }
+
+/* БЛОКИ */
+.card, .card-custom, section {
+    background-color: #ffffff;
+    color: #1e293b;
+    padding: 30px;
+    border-radius: 8px;
+    border-top: 5px solid #0ea5e9;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+/* ЗАГОЛОВКИ */
+.card h2, .card-custom h2, section h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* ТЕМНІ Блоки (для приємного читання) */
+.dark-mode .card, 
+.dark-mode .card-custom, 
+.dark-mode section {
+    background-color: #1e293b;
+    color: #f8fafc;
+    border-top: 5px solid #38bdf8;
+}
+
+/* ТЕКСТ У ТЕМНІЙ ТЕМІ (М'який колір) */
+.dark-mode p, 
+.dark-mode li { 
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.dark-mode h2 { 
+    color: #38bdf8; 
+}
+
+/* ФУТЕР І КНОПКА */
+.footer-container { 
+    text-align: center; 
+    padding: 40px; 
+    transition: all 0.3s ease;
+    background-color: #cbd5e1;
+    border-top: 4px solid #0ea5e9;
+}
+
+.dark-mode .footer-container {
+    background-color: #0f172a;
+}
+
+.dark-mode .footer-container p { 
+    color: #94a3b8; 
+}
+
+.theme-toggle-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #0ea5e9;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* МОДУЛЬНЕ ВІКНО */
+.modal-overlay {
+    position: fixed; 
+    inset: 0; 
+    background: rgba(0,0,0,0.8);
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 9999;
+}
+.modal-box {
+    background: white; 
+    padding: 35px; 
+    border-radius: 12px; 
+    width: 450px; 
+    position: relative;
+    color: #1e293b;
+}
+/* Хрестик закриття */
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #94a3b8;
+}
+
+.close-btn:hover {
+    color: #ef4444;
+}
+
+/* Заголовок у модальному вікні */
+.modal-box h2 {
+    text-align: center;
+    color: #0f172a;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Стилі для полів вводу */
+.modal-box input, 
+.modal-box textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px; 
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    display: block; 
+}
+/* Кнопка "Відправити" */
+.modal-box .send-btn {
+    width: 100%;
+    background-color: #0ea5e9;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.modal-box .send-btn:hover {
+    background-color: #0284c7;
 }

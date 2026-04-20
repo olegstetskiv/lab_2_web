@@ -2,41 +2,93 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Моє Резюме (CV)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме - Стецьків Олег</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <h1>Іван Іваненко</h1>
-        <p>Початківець Web-розробник</p>
+        <h1>Стецьків Олег Андрійович</h1>
+        <p class="subtitle">СТУДЕНТ</p>
+        <button id="theme-toggle" class="theme-btn">Змінити тему</button>
     </header>
 
     <main>
-        <section>
-            <h2>Про себе</h2>
-            <p>Я студент, який вивчає розробку веб-інтерфейсів та сучасні технології програмування.</p>
-        </section>
-
-        <section>
-            <h2>Досвід роботи</h2>
+        <!-- ЛІВА КОЛОНКА ТА ПРАВА КОЛОНКА-->
+        <section class="card">
+            <h2>КОНТАКТНА ІНФОРМАЦІЯ</h2>
             <ul>
-                <li>Навчальні проекти в університеті</li>
-                <li>Вивчення основ HTML/CSS на курсах</li>
+                <li><strong>Адреса:</strong> м. Городок (Львівська обл.)</li>
+                <li><strong>Номер телефону:</strong> +380967658345</li>
+                <li><strong>Електронна адреса:</strong> <a href="mailto:olegstetskiv@example.com">olegstetskiv@example.com</a></li>
+                <li><strong>Дата народження:</strong> 12.01.2006</li>
             </ul>
         </section>
 
-        <section>
-            <h2>Освіта</h2>
-            <p>Ваш університет, спеціальність "Комп'ютерні науки".</p>
+        <section class="card">
+            <h2>ПРО СЕБЕ</h2>
+            <p>Майбутній фахівець із кібербезпеки, студент 3-го курсу. Шукаю можливості для кар’єрного старту на позицію Junior-спеціаліста. Мої сильні сторони: аналітичне мислення, відповідальність та жага до професійного розвитку.</p>
         </section>
 
-        <section>
-            <h2>Контакти</h2>
-            <p>Email: <a href="mailto:example@mail.com">example@mail.com</a></p>
+        <section class="card">
+            <h2>НАВИЧКИ</h2>
+            <ul>
+                <li>OSINT</li>
+                <li>Управління базами даних (SQL)</li>
+                <li>Фронтенд розробка (HTML/CSS)</li>
+            </ul>
         </section>
-    </main>
+
+        <section class="card">
+            <h2>МОВИ</h2>
+            <ul>
+                <li>Українська (Рідна мова)</li>
+                <li>Англійська B1</li>
+                <li>Польська мова A1</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>ОСВІТА</h2>
+            <h3>Бакалавр 2023 - 2027</h3>
+            <p>Національний університет "Львівська Політехніка"</p>
+            <ul>
+                <li>Кібербезпека</li>
+                <li>Управління інформаційною безпекою</li>
+            </ul>
+        </section>
+    </main> 
+
+    <!-- Відгуки -->
+    <div class="full-width-container">
+        <section class="card" id="reviews-section">
+            <h2>ВІДГУКИ РОБОТОДАВЦІВ</h2>
+            <div id="reviews-container"></div>
+        </section>
+    </div>
+
+    <!-- МОДАЛЬНЕ ВІКНО -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 style="color: #0f172a; border: none; margin-bottom: 10px;">Зворотній зв'язок</h2>
+            <p style="margin-bottom: 15px; color: #475569;">Залиште свої контакти і ми вам зателефонуємо.</p>
+            <form action="https://formspree.io/f/mlgobzdz" method="POST">
+                <input type="text" name="name" placeholder="Ваше Ім'я" required>
+                <input type="email" name="email" placeholder="Ваш Email" required>
+                <input type="tel" name="phone" placeholder="Номер телефону" required>
+                <textarea name="message" placeholder="Повідомлення" rows="3"></textarea>
+                <button type="submit" class="send-btn">Відправити</button>
+            </form>
+        </div>
+    </div>
 
     <footer>
-        <p>&copy; 2024 Лабораторна робота №2. Виконав: Іван Іваненко</p>
+        <p>© 2026 Cтецьків Олег Андрійович.</p>
+        <div id="storage-info" class="sys-info"></div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
