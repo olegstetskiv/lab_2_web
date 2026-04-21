@@ -37,7 +37,7 @@ fetch('https://jsonplaceholder.typicode.com/posts/18/comments')
     const modal = document.getElementById('contact-modal');
     setTimeout(() => {
         if (!sessionStorage.getItem('closed')) modal.style.display = 'block';
-    }, 500);
+    }, 60000);
 
     document.querySelector('.close-button').onclick = () => {
         modal.style.display = 'none';
